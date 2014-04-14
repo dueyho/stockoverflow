@@ -1,16 +1,24 @@
 <h4> <%= @question.description %> </h4>
-  <% @question.answers.each do |a| %>
-    <%= a.answer_text %><br>
-  <% end %>
 
 <div id="answers">
   <ul>
-
-  </ul>
+  <% @question.answers.each do |a| %>
+    <li><%= a.answer_text %>
+    <% if a.best_answer %>
+      <%= "<<-- Best Answer" %>
+    <% end %>
+    <br><%= link_to "Delete Answer", answer_path(a), method: :delete, data: {confirm: "You sure?"}, remote: true %>
+    <%= link_to "Best Answer", answer_path(a.id, best_answer: true), method: 'patch', remote: true %>
+   </li>
+   <%= a.user.name %>
+   <br><br>
+  <% end %>
+</ul>
 </div>
 
 
 
 <%= link_to "New Answer", new_answer_path(question_id: @question.id), id: "new_link", remote: true %>
+
 
 

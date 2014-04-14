@@ -1,1 +1,4 @@
-<%= @answer.answer_text %>
+<li><%= @answer.answer_text %></li>
+<%= link_to "Delete Answer", answer, method: :delete, data: {confirm: "You sure?"}, remote: true %>
+<%= link_to "Best Answer", answer_path(@answer.id, best_answer: true), method: 'patch', remote: true %>
+<br><%= @answer.user.name %>
