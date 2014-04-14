@@ -1,0 +1,10 @@
+<%= render('layouts/errors', object: @question) %>
+<%= form_for @question do |f| %>
+
+  <div class='form-group form-inline'>
+    <%= f.label :description, "Your Question: " %>
+    <%= f.text_field :description, :class => 'form-control'%>
+  </div>
+    <%= f.submit(:class => "btn btn-primary") %>
+
+<% end %>

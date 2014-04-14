@@ -25,4 +25,5 @@ group :test, :development do
   gem 'factory_girl'
   gem 'launchy'
   gem 'faker'
+  gem 'shoulda-matchers'
 end

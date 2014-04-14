@@ -1,1 +1,8 @@
 <h1>Stack Overflow Clone</h1>
+
+<% @questions.each do |q| %>
+  <%= q.description %><br>
+<% end %>
+
+
+<%= link_to "Ask a Question", new_question_path %>
