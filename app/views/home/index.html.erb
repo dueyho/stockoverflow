@@ -1,7 +1,7 @@
 <h1>Stack Overflow Clone</h1>
 
 <% @questions.each do |q| %>
-  <%= q.description %><br>
+  <%= link_to "#{q.description}", question_path(q) %><br>
 <% end %>
 
 
